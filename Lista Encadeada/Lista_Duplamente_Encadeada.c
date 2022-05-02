@@ -89,7 +89,7 @@ void add(int cod, int posicao) {
 }
 
 //função para remover elementos da lista.
-int remova(int posicao) {
+void remova(int posicao) {
 
     //condição para o elemento ser removido:
     if(posicao >= 0 && posicao < tamanho) {
@@ -134,6 +134,12 @@ int remova(int posicao) {
             //Agora o 3 é o aux->prox que terá o ponteiro ant atualizado para o aux->ant, logo: aux->prox->ant = aux->ant
             aux->prox->ant = aux->ant;
         }
+
+        //Após ter sido atribuido o elemento a ser removido no ponteiro lixo, só precisamos desalocá-lo da memória e
+        //diminuir o tamanho da lista.
+
+        free(lixo);
+        tamanho--;
 
     }
 }
