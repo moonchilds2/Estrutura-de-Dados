@@ -18,7 +18,7 @@ vertice* buscar(int id, vertice* aux){
     if(aux != NULL){
 
         if(id == aux->id){
-            return printf("VERTICE %d JA EXISTENTE!\n", aux->id);
+            return aux;
         }
 
         else if(id < aux->id){
@@ -62,7 +62,11 @@ void add(int id){
 
     }else{
 
-        if(id > aux->id){
+        if(id == aux->id){
+            printf("ERRO");
+        }
+
+        else if(id > aux->id){
             aux->dir = novo;
         }
 
